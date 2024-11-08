@@ -1,11 +1,15 @@
 export const defaultTheme = {
     colors: {
         "base-background": "#FAFAFA",
-        "base-background-screen": "#666666",
-        "base-text": "#574F4D",
+        "base-background-screen": "#EFEFEF",
+        "base-text": "#000000",
         "base-screen": "#666666",
         "base-button": "#E6E5E5",
         "brand-purple": "#8047F8",
+        "brand-LettersOnTheLeft": "#877777",
+        "brand-LettersInTheCenter": "#1A105B",
+        "brand-LettersOnTheRig": "#74737E",
+        "brand-HeaderProfile": "#393939",
     },
 
     textSizes: {
