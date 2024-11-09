@@ -1,7 +1,12 @@
-import { HomeBackground } from './styles';
+import { InputTask } from '../../components/InputTask';
+import { HomeBackground, HomeContainer } from './styles';
 
 export function Home() {
     return (
-        <HomeBackground></HomeBackground>
+        <HomeBackground>
+            <HomeContainer>
+                <InputTask></InputTask>
+            </HomeContainer>
+        </HomeBackground>
     );
 }
