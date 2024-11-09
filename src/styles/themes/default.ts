@@ -11,6 +11,7 @@ export const defaultTheme = {
         "brand-LettersInTheCenter": "#1A105B",
         "brand-LettersOnTheRig": "#74737E",
         "brand-HeaderProfile": "#393939",
+        "brand-color-button": "#508CC2",
     },
 
     textSizes: {
