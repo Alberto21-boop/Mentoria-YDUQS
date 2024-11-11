@@ -8,6 +8,6 @@ export const HomeBackground = styled.div`
 `;
 
 export const HomeContainer = styled.div`
-  display: flex;
+  
   width: 100%;
 `

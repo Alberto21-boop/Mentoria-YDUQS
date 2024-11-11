@@ -1,9 +1,15 @@
 import { ButtonContainer } from './styles';
 
-export function ButtonTask() {
+interface ButtonTaskProps {
+    onClick: () => void;
+    children: React.ReactNode;
+}
+
+export function ButtonTask({ onClick, children }: ButtonTaskProps) {
+
     return (
-        <ButtonContainer>
-            Nova Tarefa
+        <ButtonContainer onClick={onClick}>
+            {children}
         </ButtonContainer>
     );
 }

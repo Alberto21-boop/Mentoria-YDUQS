@@ -1,11 +1,11 @@
-import { InputTask } from '../../components/InputTask';
+import { SubHeaderGoToTask } from '../../components/SubHeaderGoToTask';
 import { HomeBackground, HomeContainer } from './styles';
 
 export function Home() {
     return (
         <HomeBackground>
             <HomeContainer>
-                <InputTask></InputTask>
+                <SubHeaderGoToTask />
             </HomeContainer>
         </HomeBackground>
     );
