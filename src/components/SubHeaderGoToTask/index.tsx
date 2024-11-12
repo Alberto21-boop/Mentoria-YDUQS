@@ -1,6 +1,6 @@
 import { ButtonTask } from '../ButtonTask';
 import { ButtonWrapper, TaskContainer } from './styles';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 // interface Task {
 //     text: string;
@@ -11,9 +11,15 @@ export function SubHeaderGoToTask() {
     // const [task, setTask] = useState<string>(''); // Define `task` como string
     // const [tasks, setTasks] = useState<Task[]>([]); // Define `tasks` como lista de strings
     const navigate = useNavigate();
+    const location = useLocation();
+    const isOnTasksPage = location.pathname === '/newtask';
 
-    const goToTasksPage = () => {
+    const HandlegoToTasksPage = () => {
         navigate('/newtask'); // Rota para a página de tarefas
+    };
+
+    const HandlegoToTasksPageHome = () => {
+        navigate('/'); // Rota para a página de tarefas
     };
 
     // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +43,16 @@ export function SubHeaderGoToTask() {
         <div>
             <TaskContainer>
                 <ButtonWrapper>
-                    <ButtonTask onClick={goToTasksPage}>Adicionar Tarefa</ButtonTask>
+                    {!isOnTasksPage ? (
+                        <>
+                            <ButtonTask onClick={HandlegoToTasksPage}>Adicionar Tarefa</ButtonTask>
+                        </>
+                    ) : (
+                        <>
+                            <ButtonTask onClick={HandlegoToTasksPageHome}>Ver Tarefas</ButtonTask>
+                        </>
+                    )}
+
                 </ButtonWrapper>
             </TaskContainer>
 

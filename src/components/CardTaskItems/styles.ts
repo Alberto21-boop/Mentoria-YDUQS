@@ -7,5 +7,6 @@ export const CardTaskItemsContainer = styled.div`
   margin-top: 18px;
   border-radius: 6px;
   background: ${(props) => props.theme.colors['base-input-background']};
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+  z-index: 1;
 `

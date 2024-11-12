@@ -20,11 +20,9 @@ export const HeaderLeftSpell = styled.div`
   justify-content: center;
   margin: 0;
   padding-left: 20px;
-  gap: 18px;
 `;
 
 export const LettersOnTheLeft = styled.div`
-  width: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +31,6 @@ export const LettersOnTheLeft = styled.div`
 `;
 
 export const LettersInTheCenter = styled.div`
-  width: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +39,6 @@ export const LettersInTheCenter = styled.div`
 `;
 
 export const LettersOnTheRight = styled.div`
-  width: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
