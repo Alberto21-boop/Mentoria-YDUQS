@@ -12,6 +12,8 @@ export const defaultTheme = {
         "brand-LettersOnTheRig": "#74737E",
         "brand-HeaderProfile": "#393939",
         "brand-color-button": "#508CC2",
+        "brand-text": "#317297",
+        "brand-placeholder-text": "#AAAAAA",
     },
 
     textSizes: {
