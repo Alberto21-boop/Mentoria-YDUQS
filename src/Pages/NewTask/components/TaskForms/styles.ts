@@ -15,6 +15,7 @@ export const TaskFormTitle = styled.div`
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
+  margin-bottom: 8px;
 `;
 
 export const TaskTitleText = styled.div`
@@ -30,7 +31,13 @@ export const TaskFormTitleJob = styled.input`
   height: 40px;
   border-radius: 13px;
   padding-left: 15px;
-  color: 1px solid ${(props) => props.theme.colors['brand-color-button']};
+  margin-bottom: 8px;
+  border: 1px solid ${(props) => props.theme.colors['brand-color-button']};
+
+  &::placeholder {
+   color: ${(props) => props.theme.colors['brand-placeholder-text']};
+   opacity: 0.8;
+  }
 `;
 
 export const TaskFormJobText = styled.input`
@@ -39,5 +46,10 @@ export const TaskFormJobText = styled.input`
   border-radius: 13px;
   padding-bottom: 63px;
   padding-left: 15px;
-  color: 1px solid ${(props) => props.theme.colors['brand-color-button']};
+  border: 1px solid ${(props) => props.theme.colors['brand-color-button']};
+
+  &::placeholder {
+   color: ${(props) => props.theme.colors['brand-placeholder-text']};
+   opacity: 0.8;
+  }
 `;

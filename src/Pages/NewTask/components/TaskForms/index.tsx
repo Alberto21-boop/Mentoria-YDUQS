@@ -8,10 +8,10 @@ export function TaskForms() {
             </TaskFormTitle>
 
             <TaskTitleText>Titulo</TaskTitleText>
-            <TaskFormTitleJob placeholder='Digite o titulo da tarefa...' />
+            <TaskFormTitleJob placeholder='Digite o titulo da tarefa ...' />
 
             <TaskTitleText>Descrição</TaskTitleText>
-            <TaskFormJobText placeholder='Digite a descrição da tarefa....' />
+            <TaskFormJobText placeholder='Digite a descrição da tarefa ....' />
 
         </TaskFormsContainer>
     );
