@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CardTaskItemsContainer = styled.div`
   width: 98%;
-  height: 762px;
+  height: 732px;
   margin-left: 18px;
   margin-top: 18px;
   border-radius: 6px;

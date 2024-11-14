@@ -5,8 +5,9 @@ export const TaskFormsContainer = styled.div`
  width: 100%;
  flex-direction: column;
  position: relative;
+ margin-top: 95px;
  margin-left: 20px;
- margin-bottom: 438px;
+ margin-bottom: 420px;
 `;
 
 export const TaskFormTitle = styled.div`
@@ -34,9 +35,15 @@ export const TaskFormTitleJob = styled.input`
   margin-bottom: 8px;
   border: 1px solid ${(props) => props.theme.colors['brand-color-button']};
 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+
   &::placeholder {
    color: ${(props) => props.theme.colors['brand-placeholder-text']};
    opacity: 0.8;
+
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
   }
 `;
 
@@ -46,10 +53,28 @@ export const TaskFormJobText = styled.input`
   border-radius: 13px;
   padding-bottom: 63px;
   padding-left: 15px;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   border: 1px solid ${(props) => props.theme.colors['brand-color-button']};
 
   &::placeholder {
    color: ${(props) => props.theme.colors['brand-placeholder-text']};
    opacity: 0.8;
+
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
   }
+`;
+
+export const CharactersPerTask = styled.div`
+   display: flex;
+   justify-content: flex-end;
+   color: ${(props) => props.theme.colors['brand-text']};
+   margin-top: 35px;
+   margin-right: 84px;
+
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
+
 `;

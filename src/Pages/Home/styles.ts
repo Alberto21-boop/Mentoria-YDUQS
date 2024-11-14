@@ -19,7 +19,6 @@ export const HomeBackground = styled.div`
 
 export const HomeContainer = styled.div`
   width: 100%;
-  //max-width: 800px; /* Limita a largura do conteúdo centralizado */
   padding: 20px; 
   align-items: center;
 `

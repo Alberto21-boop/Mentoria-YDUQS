@@ -1,4 +1,4 @@
-import { TaskFormJobText, TaskFormsContainer, TaskFormTitle, TaskFormTitleJob, TaskTitleText } from './styles';
+import { CharactersPerTask, TaskFormJobText, TaskFormsContainer, TaskFormTitle, TaskFormTitleJob, TaskTitleText } from './styles';
 
 export function TaskForms() {
     return (
@@ -12,6 +12,10 @@ export function TaskForms() {
 
             <TaskTitleText>Descrição</TaskTitleText>
             <TaskFormJobText placeholder='Digite a descrição da tarefa ....' />
+
+            <CharactersPerTask>
+                0 de 50 caracteres
+            </CharactersPerTask>
 
         </TaskFormsContainer>
     );
