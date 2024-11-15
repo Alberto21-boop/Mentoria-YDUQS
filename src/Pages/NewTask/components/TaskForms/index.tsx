@@ -16,7 +16,6 @@ export function TaskForms() {
             <CharactersPerTask>
                 0 de 50 caracteres
             </CharactersPerTask>
-
         </TaskFormsContainer>
     );
 }

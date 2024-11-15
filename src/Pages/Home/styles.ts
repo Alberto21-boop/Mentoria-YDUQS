@@ -3,22 +3,19 @@ import styled from 'styled-components';
 export const HomeBackground = styled.div`
 
   display: grid;
-  grid-template-columns: 1fr; /* Define uma coluna central */
-  justify-items: center; /* Centraliza os itens na coluna */
-  align-items: start; /* Alinha os itens ao topo */
-
-  width: 100%;
-  height: 100vh;
+  //width: 100%;
   padding-top: 64px;
+  min-height: 100vh;
   background: ${(props) => props.theme.colors['base-background-screen']};
 
-  grid-template-columns: 1fr; /* Define uma coluna que ocupa todo o espaço */
-  justify-items: center; /* Centraliza os itens horizontalmente */
-  align-items: start; /* Alinha os itens ao topo da coluna */
+  /* grid-template-columns: 1fr; 
+  justify-items: center; 
+  align-items: start;  */
 `;
 
 export const HomeContainer = styled.div`
   width: 100%;
   padding: 20px; 
   align-items: center;
+  position: relative;
 `

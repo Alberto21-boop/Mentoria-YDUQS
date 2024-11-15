@@ -8,6 +8,8 @@ export const TaskFormsContainer = styled.div`
  margin-top: 95px;
  margin-left: 20px;
  margin-bottom: 420px;
+ position: relative;
+ z-index: 1;
 `;
 
 export const TaskFormTitle = styled.div`

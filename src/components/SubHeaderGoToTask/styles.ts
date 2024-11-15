@@ -10,7 +10,6 @@ export const TaskContainer = styled.div`
   background: ${(props) => props.theme.colors['base-input-background']};
   border-radius: 10px;
   margin-top: 25px;
-  padding-left: 10px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); 
   z-index: 1;
 `;
