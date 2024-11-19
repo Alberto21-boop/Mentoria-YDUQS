@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const CardTaskItemsContainer = styled.div`
   width: 98%;
-  height: 722px;
+  height: 732px;
   position: absolute;
-  bottom: 28px;
+  bottom: 32px;
   margin-left: 18px;
   border-radius: 6px;
   z-index: 1;

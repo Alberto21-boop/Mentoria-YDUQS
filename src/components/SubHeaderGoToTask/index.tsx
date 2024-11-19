@@ -12,10 +12,10 @@ export function SubHeaderGoToTask() {
     // const [tasks, setTasks] = useState<Task[]>([]); // Define `tasks` como lista de strings
     const navigate = useNavigate();
     const location = useLocation();
-    const isOnTasksPage = location.pathname === '/newtask';
+    const isOnTasksPage = location.pathname === '/task';
 
     const HandlegoToTasksPage = () => {
-        navigate('/newtask'); // Rota para a página de tarefas
+        navigate('/task'); // Rota para a página de tarefas
     };
 
     const HandlegoToTasksPageHome = () => {
@@ -40,31 +40,25 @@ export function SubHeaderGoToTask() {
     // };
 
     return (
-        <div>
-            <TaskContainer>
-                <ButtonWrapper>
-                    {!isOnTasksPage ? (
-                        <>
-                            <ButtonTask onClick={HandlegoToTasksPage}>Adicionar Tarefa</ButtonTask>
-                        </>
-                    ) : (
-                        <>
-                            <ButtonTask onClick={HandlegoToTasksPageHome}>Ver Tarefas</ButtonTask>
-                        </>
-                    )}
+        <>
+            {(location.pathname === '/' || location.pathname.includes('/task')) &&
+                <TaskContainer>
+                    <ButtonWrapper>
+                        {!isOnTasksPage ? (
+                            <>
+                                <ButtonTask onClick={HandlegoToTasksPage}>Adicionar Tarefa</ButtonTask>
+                            </>
+                        ) : (
+                            <>
+                                <ButtonTask onClick={HandlegoToTasksPageHome}>Ver Tarefas</ButtonTask>
+                            </>
+                        )}
 
-                </ButtonWrapper>
-            </TaskContainer>
+                    </ButtonWrapper>
+                </TaskContainer>
+            }
 
-            {/* Renderiza cada tarefa como um card */}
-            {/* {tasks.map((t, index) => (
-                <CardTask
-                    key={index}
-                    task={t.text}
-                    completed={t.completed}
-                    onToggle={() => toggleTaskCompletion(index)} // Função para alternar o estado de conclusão
-                />
-            ))} */}
-        </div>
+
+        </>
     );
 }

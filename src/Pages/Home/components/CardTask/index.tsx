@@ -1,22 +1,31 @@
-import { AlignTextCard, CardContainer, TaskParagraph, TextTitle } from './styles';
+import { IconButton } from '../IconButton';
+import { AlignTextCard, ButtonContainer, CardContainer, TaskParagraph, TextTitle } from './styles';
 
+export interface Task {
+    id: string | number;
+    title: string;
+    description?: string;
+    status: boolean;
+}
 interface CardTaskProps {
-    taskTitle: string;
-    task: string;
-    completed: boolean;
+    task: Task;
     onToggle: () => void;
 }
 
-export function CardTask({ taskTitle, task, completed, onToggle }: CardTaskProps) {
+export function CardTask({ task, onToggle }: CardTaskProps) {
     return (
-        <CardContainer completed={completed} onClick={onToggle}>
+        <CardContainer completed={task.status} onClick={onToggle}>
             <AlignTextCard>
                 <TextTitle>
-                    {taskTitle}
+                    {task.title}
                 </TextTitle>
                 <TaskParagraph>
-                    {task}
+                    {task.description}
+                    {/* fazer navegação pegando o id da task */}
                 </TaskParagraph>
+                <ButtonContainer>
+                    <IconButton />
+                </ButtonContainer>
             </AlignTextCard>
         </CardContainer>
     );

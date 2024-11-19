@@ -44,3 +44,10 @@ export const TaskParagraph = styled.div`
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-right: 18px;
+`;
