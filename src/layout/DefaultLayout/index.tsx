@@ -11,7 +11,7 @@ export function DefaultLayout() {
             <Header />
             <ContainContainer>
                 <SubHeaderGoToTask />
-                <CardTaskItems />
+
                 <Outlet />
             </ContainContainer>
         </LayoutContainer>

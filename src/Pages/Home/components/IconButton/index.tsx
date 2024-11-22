@@ -7,7 +7,6 @@ export function IconButton() {
         <IconButtonContainer>
             <CardIconButton>
                 <Pencil size={20} color="#007bff" weight="duotone" />
-
             </CardIconButton>
             <CardIconButton>
                 <Trash size={20} color="#ff0000" weight="bold" />
