@@ -14,14 +14,6 @@ interface CardTaskProps {
 }
 
 export function CardTask({ task }: CardTaskProps) {
-    //criar três funções , 
-    //const atualizarStatus = async => {}
-
-    //Editar => ir para pagina do formulario com o id
-
-    //Excluir = deletarTarefa => async (id) => {}
-
-    //Atualizar = atualizarStatus = async => {}
 
     return (
         <div>
@@ -43,7 +35,10 @@ export function CardTask({ task }: CardTaskProps) {
                         {/* Fazer navegação pegando o id da task */}
                     </TaskParagraph>
                     <ButtonContainer>
-                        <IconButton />
+                        <IconButton
+                            id={task.id}
+                            status={task.status}
+                        />
 
                     </ButtonContainer>
                 </AlignTextCard>

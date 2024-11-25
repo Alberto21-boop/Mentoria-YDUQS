@@ -37,8 +37,8 @@ export function Home() {
     // }
 
     return (
-        <div>
-            <div>
+        <div style={{ display: 'flex', marginTop: '42px' }}>
+            <div style={{ display: 'flex', marginTop: '42px' }}>
                 {tasks.map((task) => (
                     <CardTask key={task.id} task={task} />
                 ))}

@@ -11,6 +11,10 @@ export const HomeBackground = styled.div`
   /* grid-template-columns: 1fr; 
   justify-items: center; 
   align-items: start;  */
+  & > div {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const HomeContainer = styled.div`
