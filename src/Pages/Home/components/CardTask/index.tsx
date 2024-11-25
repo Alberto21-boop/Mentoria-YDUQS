@@ -10,10 +10,11 @@ export interface Task {
 }
 interface CardTaskProps {
     task: Task;
+    onUpdateStatus: (id: string | number, newStatus: boolean) => void;
     // onToggle: (id: string | number) => void; // de onde ele vem e para que ele serve estudar isso ele tem que ser criado dentro do componente
 }
 
-export function CardTask({ task }: CardTaskProps) {
+export function CardTask({ task, onUpdateStatus }: CardTaskProps) {
 
     return (
         <div>
@@ -38,6 +39,7 @@ export function CardTask({ task }: CardTaskProps) {
                         <IconButton
                             id={task.id}
                             status={task.status}
+                            onUpdateStatus={onUpdateStatus}
                         />
 
                     </ButtonContainer>

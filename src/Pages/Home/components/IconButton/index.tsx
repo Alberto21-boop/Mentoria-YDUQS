@@ -6,9 +6,11 @@ import { useEffect, useState } from 'react';
 export interface IconButtonProps {
     id: string | number;
     status: boolean;
+    onUpdateStatus: (id: string | number, newStatus: boolean) => void; // Callback para atualizar o status
 }
 
-export function IconButton({ id, status }: IconButtonProps) {
+export function IconButton({ id, status, onUpdateStatus }: IconButtonProps) {
+    const [currentStatus, setCurrentStatus] = useState(status); // Estado local para refletir alterações
     const navigate = useNavigate()
 
     //navigate no botão
@@ -27,15 +29,24 @@ export function IconButton({ id, status }: IconButtonProps) {
     }
 
     const handleUpdateStatus = async () => {
-        const updatedStatus = !status; // Inverte o status atual
-        await fetch(`http://localhost:3000/tasks/${id}`, {
+        const updatedStatus = !currentStatus; // Inverte o status local
+        setCurrentStatus(updatedStatus); // Atualiza localmente de imediato
+
+        const response = await fetch(`http://localhost:3000/tasks/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ status: updatedStatus }),
         });
+
+        if (response.ok) {
+            onUpdateStatus(id, updatedStatus); // Notifica o componente pai
+        } else {
+            setCurrentStatus(!updatedStatus); // Reverte o estado em caso de erro
+        }
     };
+
 
     return (
         <IconButtonContainer>
@@ -48,7 +59,10 @@ export function IconButton({ id, status }: IconButtonProps) {
                 />
             </CardIconButton>
             <CardIconButton>
-                <Trash size={20} color="#ff0000" weight="bold" />
+                <Trash
+                    size={20}
+                    color="#ff0000"
+                    weight="bold" />
             </CardIconButton>
             <CardIconButton>
                 <ArrowsClockwise

@@ -22,6 +22,13 @@ export function Home() {
         fetchTasks().then(response => setTasks(response))
     }, []);
 
+    const onUpdateStatus = (id: string | number, newStatus: boolean) => {
+        setTasks((prevTasks) =>
+            prevTasks.map((task) =>
+                task.id === id ? { ...task, status: newStatus } : task
+            )
+        );
+    };
 
 
     // if (loading) {
@@ -40,7 +47,7 @@ export function Home() {
         <div style={{ display: 'flex', marginTop: '42px' }}>
             <div style={{ display: 'flex', marginTop: '42px' }}>
                 {tasks.map((task) => (
-                    <CardTask key={task.id} task={task} />
+                    <CardTask key={task.id} task={task} onUpdateStatus={onUpdateStatus} />
                 ))}
             </div>
         </div>
