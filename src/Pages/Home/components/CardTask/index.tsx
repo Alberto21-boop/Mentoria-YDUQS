@@ -11,10 +11,11 @@ export interface Task {
 interface CardTaskProps {
     task: Task;
     onUpdateStatus: (id: string | number, newStatus: boolean) => void;
+    onDeleteTask: (id: string | number) => void;
     // onToggle: (id: string | number) => void; // de onde ele vem e para que ele serve estudar isso ele tem que ser criado dentro do componente
 }
 
-export function CardTask({ task, onUpdateStatus }: CardTaskProps) {
+export function CardTask({ task, onUpdateStatus, onDeleteTask }: CardTaskProps) {
 
     return (
         <div>
@@ -40,6 +41,7 @@ export function CardTask({ task, onUpdateStatus }: CardTaskProps) {
                             id={task.id}
                             status={task.status}
                             onUpdateStatus={onUpdateStatus}
+                            onDeleteTask={onDeleteTask}
                         />
 
                     </ButtonContainer>

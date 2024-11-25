@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import { CardIconButton, IconButtonContainer } from './styles';
 import { Pencil, Trash, ArrowsClockwise } from 'phosphor-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export interface IconButtonProps {
     id: string | number;
     status: boolean;
     onUpdateStatus: (id: string | number, newStatus: boolean) => void; // Callback para atualizar o status
+    onDeleteTask: (id: string | number) => void;
 }
 
-export function IconButton({ id, status, onUpdateStatus }: IconButtonProps) {
+export function IconButton({ id, status, onUpdateStatus, onDeleteTask }: IconButtonProps) {
     const [currentStatus, setCurrentStatus] = useState(status); // Estado local para refletir alterações
     const navigate = useNavigate()
 
@@ -47,6 +48,16 @@ export function IconButton({ id, status, onUpdateStatus }: IconButtonProps) {
         }
     };
 
+    const handleDeleteTask = async () => {
+        const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            onDeleteTask(id); // Notifica o componente pai sobre a exclusão
+        }
+    };
+
 
     return (
         <IconButtonContainer>
@@ -60,6 +71,7 @@ export function IconButton({ id, status, onUpdateStatus }: IconButtonProps) {
             </CardIconButton>
             <CardIconButton>
                 <Trash
+                    onClick={handleDeleteTask} // Liga o clique ao evento de exclusão
                     size={20}
                     color="#ff0000"
                     weight="bold" />

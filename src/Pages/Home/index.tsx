@@ -30,6 +30,10 @@ export function Home() {
         );
     };
 
+    const onDeleteTask = (id: string | number) => {
+        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    };
+
 
     // if (loading) {
     //     return <div>Carregando tarefas...</div>;
@@ -47,7 +51,7 @@ export function Home() {
         <div style={{ display: 'flex', marginTop: '42px' }}>
             <div style={{ display: 'flex', marginTop: '42px' }}>
                 {tasks.map((task) => (
-                    <CardTask key={task.id} task={task} onUpdateStatus={onUpdateStatus} />
+                    <CardTask key={task.id} task={task} onUpdateStatus={onUpdateStatus} onDeleteTask={onDeleteTask} />
                 ))}
             </div>
         </div>
