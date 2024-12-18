@@ -55,6 +55,34 @@ export function TaskForms() {
             });
     };
 
+
+    const handleCreateTask = () => {
+        fetch('http://localhost:3000/tasks', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                title,
+                description,
+                concluido: false,
+            }),
+        })
+            .then((response) => {
+                if (response.ok) {
+
+                    navigate('/');
+                } else {
+
+                }
+            })
+            .catch((error) => {
+                console.error('Erro ao criar tarefa:', error);
+
+            });
+    };
+
+
     return (
         <TaskFormsContainer>
             <TaskFormTitle>
@@ -79,11 +107,15 @@ export function TaskForms() {
                 {title.length} de 50 caracteres
             </CharactersPerTask>
 
-            <button
-                onClick={handleTaskSubmit}
-            >
-                Confirmar tarefa
-            </button>
+            {id ? (
+                <button onClick={handleTaskSubmit}>
+                    Confirmar alteração
+                </button>
+            ) : (
+                <button onClick={handleCreateTask}>
+                    Criar tarefa
+                </button>
+            )}
 
         </TaskFormsContainer >
     );
