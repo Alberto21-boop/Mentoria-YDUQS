@@ -2,7 +2,7 @@ import { ButtonTask } from '../ButtonTask';
 import { ButtonWrapper, TaskContainer } from './styles';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export function SubHeaderGoToTask() {
+export function Menu() {
     const navigate = useNavigate();
     const location = useLocation();
     const isOnTasksPage = location.pathname === '/task';

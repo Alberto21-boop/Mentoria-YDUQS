@@ -62,6 +62,9 @@ Após isso, podemos configurar nossas rotas no arquivo Routes.tsx. Esse arquivo 
 
 
 
+Para rodar a api fake, você tem que ir até a pasta em que o arquivo db.json esta, e chegando na pasta Api, você deve rodar o seguinte comando:
+
+json-server --watch db.json
 
 
 
