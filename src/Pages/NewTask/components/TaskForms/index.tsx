@@ -93,18 +93,19 @@ export function TaskForms() {
             <TaskFormTitleJob
                 placeholder="Digite o titulo da tarefa ..."
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value.slice(0, 30))}
             />
 
             <TaskTitleText>Descrição</TaskTitleText>
             <TaskFormJobText
                 placeholder="Digite a descrição da tarefa ...."
                 value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                onChange={(e) => setDescription(e.target.value.slice(0, 50))} // aqui limitamos o tamanho do texto até 50 caracteres
+            //para falar a verdade aqui limitamos qualquer texto
             />
 
             <CharactersPerTask>
-                {title.length} de 50 caracteres
+                {description.length} de 50 caracteres
             </CharactersPerTask>
 
             {id ? (
