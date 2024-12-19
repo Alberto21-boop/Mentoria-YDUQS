@@ -1,25 +1,13 @@
 import styled from 'styled-components';
 
-export const HomeBackground = styled.div`
-
-  display: grid;
-  //width: 100%;
-  padding-top: 64px;
-  min-height: 100vh;
-  background: ${(props) => props.theme.colors['base-background-screen']};
-
-  /* grid-template-columns: 1fr; 
-  justify-items: center; 
-  align-items: start;  */
-  & > div {
-    display: flex;
-    justify-content: space-between;
-  }
+export const HomeContainerCards = styled.div`
+   display: flex;
+   margin: 40px 20px 20px 35px;
 `;
 
-export const HomeContainer = styled.div`
-  width: 100%;
-  padding: 20px; 
-  align-items: center;
-  position: relative;
+export const HomeContainerCardsPosition = styled.div`
+ display: grid;
+ grid-template-columns: repeat(5, 1fr);
+ gap: 25px;
+ 
 `

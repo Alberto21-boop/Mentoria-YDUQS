@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CardTask } from './components/CardTask';
-import { HomeBackground, HomeContainer } from './styles';
+import { HomeContainerCards, HomeContainerCardsPosition } from './styles';
+
 
 export interface Task {
     id: string | number;
@@ -48,12 +49,12 @@ export function Home() {
     // }
 
     return (
-        <div style={{ display: 'flex', marginTop: '42px' }}>
-            <div style={{ display: 'flex', marginTop: '42px' }}>
+        <HomeContainerCards>
+            <HomeContainerCardsPosition>
                 {tasks.map((task) => (
                     <CardTask key={task.id} task={task} onUpdateStatus={onUpdateStatus} onDeleteTask={onDeleteTask} />
                 ))}
-            </div>
-        </div>
+            </HomeContainerCardsPosition>
+        </HomeContainerCards>
     );
 }
