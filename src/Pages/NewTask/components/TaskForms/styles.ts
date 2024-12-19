@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const AlignTaskFormsContainers = styled.div`
+ display: flex;
+  margin:  auto;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  margin-left: 28px;
+`;
+
 export const TaskFormsContainer = styled.div`
  display: flex;
  width: 100%;

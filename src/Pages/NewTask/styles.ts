@@ -7,6 +7,4 @@ export const NewTaskContainer = styled.div`
   height: 100%;
   position: absolute;
   align-items: center;
-  margin-left: 28px;
-  
 `;

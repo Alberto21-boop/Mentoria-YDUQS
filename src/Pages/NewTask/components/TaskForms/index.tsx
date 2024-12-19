@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import {
+    AlignTaskFormsContainers,
     CharactersPerTask,
     TaskButton,
     TaskFormJobText,
@@ -85,40 +86,49 @@ export function TaskForms() {
 
 
     return (
-        <TaskFormsContainer>
-            <TaskFormTitle>
-                Criar uma nova tarefa
-            </TaskFormTitle>
+        <AlignTaskFormsContainers>
+            <TaskFormsContainer>
+                {id ? (
+                    <TaskFormTitle >
+                        Altere a tarefa
 
-            <TaskTitleText>Titulo</TaskTitleText>
-            <TaskFormTitleJob
-                placeholder="Digite o titulo da tarefa ..."
-                value={title}
-                onChange={(e) => setTitle(e.target.value.slice(0, 30))}
-            />
+                    </TaskFormTitle>
+                ) : (
+                    <TaskFormTitle >
+                        Criar uma nova tarefa
+                    </TaskFormTitle>
+                )}
 
-            <TaskTitleText>Descrição</TaskTitleText>
-            <TaskFormJobText
-                placeholder="Digite a descrição da tarefa ...."
-                value={description}
-                onChange={(e) => setDescription(e.target.value.slice(0, 50))} // aqui limitamos o tamanho do texto até 50 caracteres
-            //para falar a verdade aqui limitamos qualquer texto
-            />
+                <TaskTitleText>Titulo</TaskTitleText>
+                <TaskFormTitleJob
+                    placeholder="Digite o titulo da tarefa ..."
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value.slice(0, 30))}
+                />
 
-            <CharactersPerTask>
-                {description.length} de 50 caracteres
-            </CharactersPerTask>
+                <TaskTitleText>Descrição</TaskTitleText>
+                <TaskFormJobText
+                    placeholder="Digite a descrição da tarefa ...."
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value.slice(0, 50))} // aqui limitamos o tamanho do texto até 50 caracteres
+                //para falar a verdade aqui limitamos qualquer texto
+                />
 
-            {id ? (
-                <TaskButton onClick={handleTaskSubmit}>
-                    Confirmar alteração
-                </TaskButton>
-            ) : (
-                <TaskButton onClick={handleCreateTask}>
-                    Criar tarefa
-                </TaskButton>
-            )}
+                <CharactersPerTask>
+                    {description.length} de 50 caracteres
+                </CharactersPerTask>
 
-        </TaskFormsContainer >
+                {id ? (
+                    <TaskButton onClick={handleTaskSubmit}>
+                        Confirmar alteração
+                    </TaskButton>
+                ) : (
+                    <TaskButton onClick={handleCreateTask}>
+                        Criar tarefa
+                    </TaskButton>
+                )}
+
+            </TaskFormsContainer >
+        </AlignTaskFormsContainers>
     );
 }
