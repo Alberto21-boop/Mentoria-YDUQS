@@ -78,5 +78,16 @@ export const CharactersPerTask = styled.div`
 
    font-family: 'Poppins', sans-serif;
    font-weight: 400;
+`;
 
+export const TaskButton = styled.button`
+  display: flex;
+  width: 95px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background: ${(props) => props.theme.colors['brand-color-button']};
+  color: ${(props) => props.theme.colors['base-button']};
 `;

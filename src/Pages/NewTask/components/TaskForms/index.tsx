@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import {
     CharactersPerTask,
+    TaskButton,
     TaskFormJobText,
     TaskFormsContainer,
     TaskFormTitle,
@@ -109,13 +110,13 @@ export function TaskForms() {
             </CharactersPerTask>
 
             {id ? (
-                <button onClick={handleTaskSubmit}>
+                <TaskButton onClick={handleTaskSubmit}>
                     Confirmar alteração
-                </button>
+                </TaskButton>
             ) : (
-                <button onClick={handleCreateTask}>
+                <TaskButton onClick={handleCreateTask}>
                     Criar tarefa
-                </button>
+                </TaskButton>
             )}
 
         </TaskFormsContainer >

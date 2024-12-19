@@ -44,7 +44,8 @@
       "id": "56a5",
       "title": "teste de caract",
       "description": "sajdhasjkhdgjkasgsfdfSADASDASDASDASDASDASDFASDFASD",
-      "concluido": false
+      "concluido": false,
+      "status": true
     }
   ]
 }
