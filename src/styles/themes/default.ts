@@ -14,6 +14,8 @@ export const defaultTheme = {
         "brand-color-button": "#508CC2",
         "brand-text": "#317297",
         "brand-placeholder-text": "#AAAAAA",
+        "completedTaskCard": "#5C9971",
+        "incompleteCardTask": "#C16565",
     },
 
     textSizes: {

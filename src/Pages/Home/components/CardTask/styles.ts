@@ -9,13 +9,14 @@ export const CardContainer = styled.div<CardContainerProps>`
   flex-direction: column;
   position: relative;
   width: 320px;
-  height: 150px;
-  border-radius: 5px;
+  height: 170px;
+  border-radius: 8px;
   margin-left: 26px;
-  margin-top: -16px;
   z-index: 1;
-  background-color: ${(props) => (props.completed ? 'green' : 'red')};
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+  background-color: ${(props) => (props.completed
+    ? props.theme.colors.completedTaskCard
+    : props.theme.colors.incompleteCardTask)};
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5); 
   color: white;
     cursor: pointer;
     transition: background-color 0.3s;
